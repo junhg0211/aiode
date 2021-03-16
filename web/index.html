@@ -40,7 +40,7 @@
             <span class="article-information">수정 {{ article.edited_at }}</span>
             <span class="article-information" style="opacity: 50%;">작성 {{ article.wrote_at }}</span>
             {% for hashtag in article.hashtags %}
-                <span class="article-hashtag">{{ hashtag|safe }}</span>
+                <a href="/hashtag/{{ hashtag }}"><span class="article-hashtag">#{{ hashtag|safe }}</span></a>
             {% endfor %}
             {% for line in article.content.split('\n') %}
 {{ line|safe }}{% endfor %}
@@ -57,6 +57,6 @@
         </ul>
     </div>
 </div>
-<script src="/web/js/index.js"></script>
+<script src="/web/js/base.js"></script>
 </body>
 </html>

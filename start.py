@@ -26,7 +26,12 @@ def index():
 
 @app.route('/post/<id_>')
 def post(id_: str):
-    return render_template('post.html', article=Article.get_article(id_), const=const)
+    return render_template('post.html', articles=(Article.get_article(id_),), const=const)
+
+
+@app.route('/hashtag/<hashtag>')
+def hashtag(hashtag: str):
+    return render_template('post.html', articles=Article.get_articles_by_hashtag(hashtag), const=const)
 
 
 if __name__ == '__main__':
