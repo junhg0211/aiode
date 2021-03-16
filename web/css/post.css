@@ -1,3 +1,13 @@
+blockquote {
+    background-color: #2c2c2c;
+    padding: 16px 40px;
+    margin: 0;
+    border-left: 10px solid #fdde59;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+blockquote p { margin: 0; }
+
 .header-small {
     color: #2c2c2c;
     height: 20vh;
