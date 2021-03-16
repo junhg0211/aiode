@@ -13,13 +13,12 @@
     <div class="nav-bar-content">
         <a href="/">
             <img src="/web/drawable/favicon.png" alt="로고">
-            <h2>Sch</h2>
+            <h2>{{ const.nav.title }}</h2>
         </a>
         <ul>
-            {% for tab in const.nav %}
+            {% for tab in const.nav.destination %}
                 <li><a href="{{ tab.link }}">{{ tab.text }}</a></li>
             {% endfor %}
-            {#                <li>Content</li>#}
         </ul>
     </div>
 </div>

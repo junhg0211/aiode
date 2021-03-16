@@ -1,12 +1,15 @@
 {
-  "nav": [
-    {
-      "link": "/contact",
-      "text": "Contact"
-    }
-  ],
+  "nav": {
+    "title": "Sch",
+    "destination": [
+      {
+        "link": "/contact",
+        "text": "Contact"
+      }
+    ]
+  },
   "header": {
-    "title": "Y'Sch fluktic!",
+    "title": "Y'Sch fluktic.",
     "subtitle": "Lorem ipsum dolor sit amet, consectetur adipisicing."
   },
   "footer": {
