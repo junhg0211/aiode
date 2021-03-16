@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sch lives</title>
+    <link rel="shortcut icon" href="/web/drawable/favicon.png">
+    <link rel="stylesheet" href="/web/css/base.css">
+    <link rel="stylesheet" href="/web/css/index.css">
+    <link rel="stylesheet" href="/web/css/post.css">
+    <link rel="stylesheet" href="/web/css/codehilite.css">
+</head>
+<body>
+<div class="nav-bar" id="nav-bar">
+    <div class="nav-bar-content">
+        <a href="/">
+            <img src="/web/drawable/favicon.png" alt="로고">
+            <h2>Sch</h2>
+        </a>
+        <ul>
+            {% for tab in const.nav %}
+                <li><a href="{{ tab.link }}">{{ tab.text }}</a></li>
+            {% endfor %}
+            {#                <li>Content</li>#}
+        </ul>
+    </div>
+</div>
+<div class="header">
+    <div class="header-text">
+        <a href="/">
+            <img src="/web/drawable/favicon.png" alt="채널아트" style="height: 3rem;">
+            <h1>{{ const.header.title }}</h1>
+            <h3>{{ const.header.subtitle }}</h3>
+        </a>
+    </div>
+</div>
+<div class="content">
+    {% for article in articles %}
+        <div class="article">
+            <a href="/post/{{ article.id }}">{{ article.title|safe }}</a>
+            <span class="article-information">수정 {{ article.edited_at }}</span>
+            <span class="article-information" style="opacity: 50%;">작성 {{ article.wrote_at }}</span>
+            {% for hashtag in article.hashtags %}
+                <span class="article-hashtag">{{ hashtag|safe }}</span>
+            {% endfor %}
+            {% for line in article.content.split('\n') %}
+{{ line|safe }}{% endfor %}
+        </div>
+    {% endfor %}
+</div>
+<div class="footer-frame">
+    <div class="footer">
+        <h3>Contact me</h3>
+        <ul>
+            {% for address in const.footer.addresses %}
+                <li><a href="{{ address.link }}">{{ address.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<script src="/web/js/index.js"></script>
+</body>
+</html>

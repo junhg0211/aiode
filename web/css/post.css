@@ -1,0 +1,38 @@
+.header-small {
+    color: #2c2c2c;
+    height: 20vh;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(45deg, #fdde59, #0000), url("/web/drawable/header_background.png");
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header-small a { color: #2c2c2c; text-decoration: none; }
+
+.header-small .header-text { margin-left: 20rem; }
+
+.header-small .header-text *:first-child { margin: 0; padding-top: 5vh; }
+
+.header-small .header-text h1:first-of-type { margin: 0; font-size: 3rem; }
+
+.content { margin: auto; padding-left: 2rem; padding-right: 2rem; max-width: 1440px; }
+
+.article { margin-top: 23px; padding: 1rem; background-color: #3c3c3c; border: 1px solid #6c6c6c; border-radius: 8px; }
+
+.article img { width: 50%; }
+
+.article-information { font-size: 0.8rem; }
+
+.article h1:first-of-type { margin-top: 0; margin-bottom: 0; }
+
+.article p:last-of-type { margin-bottom: 0; }
+
+.article p { text-indent: 2rem; text-align: justify; }
+
+.article p:first-of-type { text-indent: 0; }
+
+.article :not(p) { text-indent: 0; }
+
+.article pre code { padding: 1rem; }
+
+.article a { color: #f7f7f9; }

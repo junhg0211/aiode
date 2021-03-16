@@ -1,0 +1,16 @@
+.header {
+    color: #2c2c2c;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(45deg, #fdde59, #0000), url("/web/drawable/header_background.png");
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header a { color: #2c2c2c; text-decoration: none; }
+
+.header .header-text { margin-left: 20rem; }
+
+.header .header-text *:first-child { margin: 0; padding-top: 45vh; }
+
+.header .header-text h1:first-of-type { margin: 0; font-size: 8rem; }

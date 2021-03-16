@@ -1,0 +1,28 @@
+{
+  "nav": [
+    {
+      "link": "/contact",
+      "text": "Contact"
+    }
+  ],
+  "header": {
+    "title": "Y'Sch fluktic!",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipisicing."
+  },
+  "footer": {
+    "addresses": [
+      {
+        "name": "Twitter",
+        "link": "https://twitter.com/YtScratch"
+      },
+      {
+        "name": "GitHub",
+        "link": "https://github.com/junhg0211"
+      },
+      {
+        "name": "YouTube",
+        "link": "https://www.youtube.com/c/Sch02"
+      }
+    ]
+  }
+}
