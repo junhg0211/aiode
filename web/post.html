@@ -31,27 +31,57 @@
 <div class="content">
     {% for article in articles %}
         <div class="article">
-            <a href="/post/{{ article.id }}">{{ article.title|safe }}</a>
+            <a href="/p/{{ article.id }}">{{ article.title|safe }}</a>
             <span class="article-information">수정 {{ article.edited_at }}</span>
             <span class="article-information" style="opacity: 50%;">작성 {{ article.wrote_at }}</span>
             {% for hashtag in article.hashtags %}
-                <a href="/hashtag/{{ hashtag }}"><span class="article-hashtag">#{{ hashtag|safe }}</span></a>
+                <a href="/h/{{ hashtag }}"><span class="article-hashtag">#{{ hashtag|safe }}</span></a>
             {% endfor %}
             {% for line in article.content.split('\n') %}
 {{ line|safe }}{% endfor %}
         </div>
     {% endfor %}
+    {% if now_page %}
+        <div class="posts-nav">
+            <a href="/ps/{{ now_page - 1 }}">
+                <button>{{ now_page - 1 }}</button>
+            </a>
+            <a href="/ps/{{ now_page }}">
+                <button>{{ now_page }}</button>
+            </a>
+            <a href="/ps/{{ now_page + 1 }}">
+                <button>{{ now_page + 1 }}</button>
+            </a>
+        </div>
+    {% endif %}
 </div>
 <div class="footer-frame">
     <div class="footer">
-        <h3>Contact me</h3>
-        <ul>
-            {% for address in const.footer.addresses %}
-                <li><a href="{{ address.link }}" target="_blank">{{ address.name }}</a></li>
-            {% endfor %}
-        </ul>
+        <div class="footer-block">
+            <h3>Find me at</h3>
+            <ul>
+                {% for address in const.footer.addresses %}
+                    <li><a href="{{ address.link }}">{{ address.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="footer-block">
+            <p>
+                Copyright ⓒ 2015 -
+                <script>document.write(`${new Date().getFullYear()}`);</script>
+            </p>
+            <p>All rights belongs to its respective owner.</p>
+        </div>
     </div>
 </div>
 <script src="/web/js/base.js"></script>
+{% if now_page %}
+    <script>
+        const NOW_PAGE = {{ now_page }};
+        const ARTICLE_COUNT = {{ article_count }};
+        const ARTICLE_PER_PAGE = {{ article_per_page }};
+    </script>
+{% endif %}
+<script src="/web/js/post.js"></script>
 </body>
 </html>

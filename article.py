@@ -11,8 +11,12 @@ class Article:
     HASHTAG_RE = re.compile(r'#[^( |\n)]+')
 
     @staticmethod
-    def get_articles(limit: int = 5) -> list:
-        return [Article.get_article(filename, True) for filename in listdir(Article.DIRECTORY)[::-1][:limit]]
+    def get_article_count() -> int:
+        return len(listdir(Article.DIRECTORY))
+
+    @staticmethod
+    def get_articles(from_: int = 0, to: int = 5) -> list:
+        return [Article.get_article(filename, True) for filename in listdir(Article.DIRECTORY)[::-1][from_:to]]
 
     @staticmethod
     def get_article(id_: str, is_filename: bool = False):
@@ -30,7 +34,7 @@ class Article:
         wrote_at = datetime.fromtimestamp(stat.st_mtime)
         id_ = path.split(filename)[-1][::-1].split('.', 1)[1][::-1]
         return Article(id_, title, wrote_at, edited_at, content, hashtags)
-    
+
     @staticmethod
     def get_articles_by_hashtag(hashtag: str, limit: int = 5) -> list:
         result = list()

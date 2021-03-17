@@ -3,8 +3,12 @@
     "title": "Sch",
     "destination": [
       {
-        "link": "/contact",
-        "text": "Contact"
+        "link": "/p/3",
+        "text": "연락처"
+      },
+      {
+        "link": "/p/2",
+        "text": "경력"
       }
     ]
   },
@@ -27,5 +31,6 @@
         "link": "https://www.youtube.com/c/Sch02"
       }
     ]
-  }
+  },
+  "article-per-page": 3
 }
