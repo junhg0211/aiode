@@ -11,12 +11,16 @@ class Article:
     HASHTAG_RE = re.compile(r'#[^( |\n)]+')
 
     @staticmethod
+    def is_article(id_: str) -> bool:
+        return path.isfile(path.join(Article.DIRECTORY, f'{id_}.md'))
+
+    @staticmethod
     def get_article_count() -> int:
         return len(listdir(Article.DIRECTORY))
 
     @staticmethod
     def get_articles(from_: int = 0, to: int = 5) -> list:
-        return [Article.get_article(filename, True) for filename in listdir(Article.DIRECTORY)[::-1][from_:to]]
+        return [Article.get_article(filename, True) for filename in sorted(listdir(Article.DIRECTORY)[::-1], reverse=True)[from_:to]]
 
     @staticmethod
     def get_article(id_: str, is_filename: bool = False):

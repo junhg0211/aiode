@@ -28,7 +28,10 @@ def index():
 
 @app.route('/p/<id_>')
 def post(id_: str):
-    return render_template('post.html', articles=(Article.get_article(id_),), const=const)
+    if Article.is_article(id_):
+        return render_template('post.html', articles=(Article.get_article(id_),), const=const)
+    else:
+        return 'No Article.'
 
 
 @app.route('/h/<hashtag_>')
